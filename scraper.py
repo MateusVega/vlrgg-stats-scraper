@@ -3,7 +3,6 @@ import time
 import requests as r
 from bs4 import BeautifulSoup
 import os
-import random
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -72,7 +71,7 @@ def scraper(mode, urls, output_file_name, skip_players_without_picture=True):
             name = player.split("/")[-1].replace("'", "")
             id = player.split("/")[-2]
             append_player_stats(id, name, img_url, kills, deaths, assists)
-            time.sleep(random.uniform(0.5, 1.2))
+            time.sleep(0.7)
     elif mode == "tournament":
         if len(urls) > 1:
             raise ValueError(f"'tournament' mode just accept one url")
@@ -89,7 +88,7 @@ def scraper(mode, urls, output_file_name, skip_players_without_picture=True):
             name = player.select_one(".mod-player a")["href"].split("/")[-1]
             id = player.select_one(".mod-player a")["href"].split("/")[-2]
             append_player_stats(id, name, img_url, kills, deaths, assists)
-            time.sleep(random.uniform(0.5, 1.2))
+            time.sleep(0.7)
     else:
         raise ValueError(f"Invalid Mode: {mode}. Use 'tournament' or 'carrer'.")
     
@@ -101,4 +100,38 @@ list_url_exemples = [
 ]
 
 if __name__ == '__main__':
-    scraper(mode="tournament", urls=list_url_exemples, output_file_name="stats")
+    print("=== VLR Stats Scraper ===")
+
+    mode = input("Mode ('tournament' or 'career'): ").strip().lower()
+    if mode not in ["tournament", "career"]:
+        raise ValueError("Invalid mode. Use 'tournament' or 'career'.")
+
+    print("\nEnter URLs (one per line). When finished, press ENTER on an empty line:")
+    urls = []
+    while True:
+        u = input("> ").strip()
+        if u == "":
+            break
+        urls.append(u)
+
+    if len(urls) == 0:
+        raise ValueError("You must provide at least one URL.")
+
+    output_file = input("\nOutput file name (without .json): ").strip()
+    if output_file == "":
+        raise ValueError("Output file name cannot be empty.")
+
+    skip_players_without_picture = (
+        input("Skip players without picture? (y/n): ").strip().lower() == "y"
+    )
+
+    print("\nRunning scraper...\n")
+
+    scraper(
+        mode=mode,
+        urls=urls,
+        output_file_name=output_file,
+        skip_players_without_picture=skip_players_without_picture
+    )
+
+    print("\nDone! JSON saved as:", output_file + ".json")
