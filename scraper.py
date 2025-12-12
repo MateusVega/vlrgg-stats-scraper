@@ -1,9 +1,9 @@
+import os
+from collections import defaultdict
 import json
 import time
-import requests as r
 from bs4 import BeautifulSoup
-import os
-
+import requests as r
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -25,6 +25,28 @@ def get_picture(url):
     request = fetch(f"https://www.vlr.gg{url}/?timespan=all")
     site = BeautifulSoup(request.text, "html.parser")
     return site.select_one(".wf-avatar img")["src"]
+
+def merge_players(players_list):
+    merged = {}
+
+    for p in players_list:
+        name = p["Player"]
+
+        if name not in merged:
+            merged[name] = {
+                "id": p["id"],
+                "Player": p["Player"],
+                "Img": p["Img"],
+                "Kills": p["Kills"],
+                "Deaths": p["Deaths"],
+                "Assists": p["Assists"]
+            }
+        else:
+            merged[name]["Kills"] += p["Kills"]
+            merged[name]["Deaths"] += p["Deaths"]
+            merged[name]["Assists"] += p["Assists"]
+
+    return list(merged.values())
 
 def append_player_stats(id, name, img_url, kills, deaths, assists):
     player_stats = {
@@ -73,22 +95,31 @@ def scraper(mode, urls, output_file_name, skip_players_without_picture=True):
             append_player_stats(id, name, img_url, kills, deaths, assists)
             time.sleep(0.7)
     elif mode == "tournament":
-        if len(urls) > 1:
-            raise ValueError(f"'tournament' mode just accept one url")
-        request = fetch(urls[0])
-        site = BeautifulSoup(request.text, "html.parser")
-        players = site.select("tbody tr")
-        for player in players:
-            img_url = get_picture(player.select_one(".mod-player a")["href"])
-            if img_url == "/img/base/ph/sil.png" and skip_players_without_picture:
-                continue
-            kills = int(player.select("td")[-5].text)
-            deaths = int(player.select("td")[-4].text)
-            assists = int(player.select("td")[-3].text)
-            name = player.select_one(".mod-player a")["href"].split("/")[-1]
-            id = player.select_one(".mod-player a")["href"].split("/")[-2]
-            append_player_stats(id, name, img_url, kills, deaths, assists)
+        stats_lists = []
+        for link in urls:
+            request = fetch(link)
+            site = BeautifulSoup(request.text, "html.parser")
+            players = site.select("tbody tr")
+            for player in players:
+                img_url = get_picture(player.select_one(".mod-player a")["href"])
+                if img_url == "/img/base/ph/sil.png" and skip_players_without_picture:
+                    continue
+                kills = int(player.select("td")[-5].text)
+                deaths = int(player.select("td")[-4].text)
+                assists = int(player.select("td")[-3].text)
+                name = player.select_one(".mod-player a")["href"].split("/")[-1]
+                id = player.select_one(".mod-player a")["href"].split("/")[-2]
+                stats_lists.append({
+                    "id" : id,
+                    "Player" : name,
+                    "Img" : img_url,
+                    "Kills" : kills,
+                    "Deaths" : deaths,
+                    "Assists" : assists
+                })
             time.sleep(0.7)
+        full_stats = merge_players(stats_lists)
+            
     else:
         raise ValueError(f"Invalid Mode: {mode}. Use 'tournament' or 'carrer'.")
     
