@@ -9,7 +9,7 @@ Perfect for data analysis, small projects, or game ideas that need accurate Valo
 - Scrapes **kills, deaths, assists** from each player's career.
 - Supports two modes:
   - **career** → Collect stats from all players found in one or more event pages.
-  - **tournament** → Scrape stats directly from a single event stats table.
+  - **tournament** → Scrape stats directly for one or more events.
 - Automatically extracts each player’s **profile picture**.
 - Optionally **skips players without images**.
 - Outputs structured JSON ready for use.
@@ -33,6 +33,8 @@ vlr-stats-scraper/
 pip install -r requirements.txt
 python scraper.py
 ```
+**Note: You need Python 3.12.0 installed**
+
 ## Usage
 
 When running the scraper, you must provide the following arguments:
@@ -79,4 +81,4 @@ This project is not affiliated with VLR.gg.
 
 Heavy scraping may cause temporary rate limits — use responsibly.
 
-
+The scrape process may take some time too avoid request restrition
