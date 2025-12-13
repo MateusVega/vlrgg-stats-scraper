@@ -60,14 +60,14 @@ def append_player_stats(id, name, img_url, kills, deaths, assists):
     full_stats.append(player_stats)
 
 def scraper(mode, urls, output_file_name, skip_players_without_picture=True):
-    # mode -> "tournament" or "carrer"
+    # mode -> "tournament" or "career"
 
     if len(urls) == 0:
         raise ValueError(f"The application needs at least one url.")
     
     players_links = []
 
-    if mode == "carrer":
+    if mode == "career":
         for link in urls:
             request = fetch(link)
             site = BeautifulSoup(request.text, "html.parser")
@@ -121,7 +121,7 @@ def scraper(mode, urls, output_file_name, skip_players_without_picture=True):
         full_stats = merge_players(stats_lists)
             
     else:
-        raise ValueError(f"Invalid Mode: {mode}. Use 'tournament' or 'carrer'.")
+        raise ValueError(f"Invalid Mode: {mode}. Use 'tournament' or 'career'.")
     
     with open(f"data/{output_file_name}.json", 'w', encoding="utf-8") as json_file:
         json.dump(full_stats, json_file, ensure_ascii=False, indent=4)
