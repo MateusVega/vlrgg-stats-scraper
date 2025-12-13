@@ -1,0 +1,586 @@
+[
+    {
+        "id": "8480",
+        "Player": "aspas",
+        "Img": "//owcdn.net/img/64169733ae9f1.png",
+        "Kills": 6050,
+        "Deaths": 1636,
+        "Assists": 1610
+    },
+    {
+        "id": "9554",
+        "Player": "kaajak",
+        "Img": "//owcdn.net/img/687e2c5192fe5.png",
+        "Kills": 6143,
+        "Deaths": 1484,
+        "Assists": 1590
+    },
+    {
+        "id": "2172",
+        "Player": "brawk",
+        "Img": "/img/base/ph/sil.png",
+        "Kills": 9145,
+        "Deaths": 5509,
+        "Assists": 887
+    },
+    {
+        "id": "5395",
+        "Player": "cortezia",
+        "Img": "//owcdn.net/img/680c49ca43fee.png",
+        "Kills": 5247,
+        "Deaths": 2563,
+        "Assists": 714
+    },
+    {
+        "id": "28400",
+        "Player": "hyunmin",
+        "Img": "//owcdn.net/img/676b9d1f6a2cd.png",
+        "Kills": 2825,
+        "Deaths": 719,
+        "Assists": 534
+    },
+    {
+        "id": "11118",
+        "Player": "skuba",
+        "Img": "//owcdn.net/img/679c2583a9041.png",
+        "Kills": 8255,
+        "Deaths": 4276,
+        "Assists": 947
+    },
+    {
+        "id": "7378",
+        "Player": "jinggg",
+        "Img": "//owcdn.net/img/67c701558ae34.png",
+        "Kills": 7789,
+        "Deaths": 2767,
+        "Assists": 1520
+    },
+    {
+        "id": "458",
+        "Player": "chronicle",
+        "Img": "//owcdn.net/img/687e2c2e12ca6.png",
+        "Kills": 7589,
+        "Deaths": 3867,
+        "Assists": 1201
+    },
+    {
+        "id": "21668",
+        "Player": "verno",
+        "Img": "//owcdn.net/img/664bd823278c5.png",
+        "Kills": 7657,
+        "Deaths": 4105,
+        "Assists": 900
+    },
+    {
+        "id": "4",
+        "Player": "crashies",
+        "Img": "//owcdn.net/img/687e2c376a05d.png",
+        "Kills": 7509,
+        "Deaths": 3842,
+        "Assists": 758
+    },
+    {
+        "id": "9803",
+        "Player": "d4v41",
+        "Img": "//owcdn.net/img/67c7016bb1f6a.png",
+        "Kills": 8127,
+        "Deaths": 3750,
+        "Assists": 1112
+    },
+    {
+        "id": "4678",
+        "Player": "beyn",
+        "Img": "//owcdn.net/img/6360e2fa70458.png",
+        "Kills": 4223,
+        "Deaths": 1679,
+        "Assists": 561
+    },
+    {
+        "id": "11225",
+        "Player": "ethan",
+        "Img": "//owcdn.net/img/6416939a5a1c2.png",
+        "Kills": 5704,
+        "Deaths": 3357,
+        "Assists": 694
+    },
+    {
+        "id": "20240",
+        "Player": "xenom",
+        "Img": "//owcdn.net/img/65a6bddfe2c3a.png",
+        "Kills": 3962,
+        "Deaths": 1524,
+        "Assists": 721
+    },
+    {
+        "id": "4462",
+        "Player": "mako",
+        "Img": "//owcdn.net/img/676b9d064081b.png",
+        "Kills": 6771,
+        "Deaths": 4250,
+        "Assists": 931
+    },
+    {
+        "id": "1916",
+        "Player": "free1ng",
+        "Img": "//owcdn.net/img/676b9d177fab9.png",
+        "Kills": 3638,
+        "Deaths": 1183,
+        "Assists": 504
+    },
+    {
+        "id": "1369",
+        "Player": "doma",
+        "Img": "//owcdn.net/img/68644d64be9a2.png",
+        "Kills": 6431,
+        "Deaths": 2482,
+        "Assists": 956
+    },
+    {
+        "id": "4164",
+        "Player": "s0m",
+        "Img": "//owcdn.net/img/64169001cb7f4.png",
+        "Kills": 7059,
+        "Deaths": 2969,
+        "Assists": 1240
+    },
+    {
+        "id": "9810",
+        "Player": "alfajer",
+        "Img": "//owcdn.net/img/687e2c40ac175.png",
+        "Kills": 6883,
+        "Deaths": 1888,
+        "Assists": 1378
+    },
+    {
+        "id": "5132",
+        "Player": "mada",
+        "Img": "//owcdn.net/img/6399a40caf260.png",
+        "Kills": 9798,
+        "Deaths": 3411,
+        "Assists": 2384
+    },
+    {
+        "id": "35013",
+        "Player": "flashback",
+        "Img": "//owcdn.net/img/676b9cfda9d77.png",
+        "Kills": 3001,
+        "Deaths": 903,
+        "Assists": 447
+    },
+    {
+        "id": "5957",
+        "Player": "artzin",
+        "Img": "//owcdn.net/img/64328a8010bd9.png",
+        "Kills": 4174,
+        "Deaths": 1478,
+        "Assists": 770
+    },
+    {
+        "id": "9801",
+        "Player": "f0rsaken",
+        "Img": "//owcdn.net/img/67c7016159bd7.png",
+        "Kills": 8975,
+        "Deaths": 3689,
+        "Assists": 1836
+    },
+    {
+        "id": "438",
+        "Player": "boaster",
+        "Img": "//owcdn.net/img/687e2c495dcc6.png",
+        "Kills": 7744,
+        "Deaths": 4463,
+        "Assists": 890
+    },
+    {
+        "id": "13744",
+        "Player": "patmen",
+        "Img": "//owcdn.net/img/67c6d1461c5cf.png",
+        "Kills": 4768,
+        "Deaths": 1977,
+        "Assists": 743
+    },
+    {
+        "id": "17086",
+        "Player": "something",
+        "Img": "//owcdn.net/img/67c701797a51d.png",
+        "Kills": 5482,
+        "Deaths": 1739,
+        "Assists": 1321
+    },
+    {
+        "id": "9",
+        "Player": "tenz",
+        "Img": "//owcdn.net/img/6416950ce6638.png",
+        "Kills": 6581,
+        "Deaths": 2684,
+        "Assists": 1589
+    },
+    {
+        "id": "15559",
+        "Player": "chichoo",
+        "Img": "//owcdn.net/img/677fe4289bb34.png",
+        "Kills": 7178,
+        "Deaths": 3100,
+        "Assists": 568
+    },
+    {
+        "id": "3520",
+        "Player": "zmjjkk",
+        "Img": "//owcdn.net/img/677fe40edf9da.png",
+        "Kills": 9010,
+        "Deaths": 2241,
+        "Assists": 2107
+    },
+    {
+        "id": "4004",
+        "Player": "zekken",
+        "Img": "//owcdn.net/img/6416956f0da1e.png",
+        "Kills": 9724,
+        "Deaths": 3925,
+        "Assists": 2143
+    },
+    {
+        "id": "10971",
+        "Player": "riens",
+        "Img": "//owcdn.net/img/665b76fb7ba5f.png",
+        "Kills": 6534,
+        "Deaths": 3020,
+        "Assists": 894
+    },
+    {
+        "id": "4742",
+        "Player": "smoggy",
+        "Img": "//owcdn.net/img/677fe435edc57.png",
+        "Kills": 7342,
+        "Deaths": 3069,
+        "Assists": 847
+    },
+    {
+        "id": "18350",
+        "Player": "miniboo",
+        "Img": "//owcdn.net/img/665b77a842328.png",
+        "Kills": 5828,
+        "Deaths": 1467,
+        "Assists": 1524
+    },
+    {
+        "id": "7603",
+        "Player": "mazino",
+        "Img": "//owcdn.net/img/687bfb2ed5da4.png",
+        "Kills": 5878,
+        "Deaths": 3104,
+        "Assists": 780
+    },
+    {
+        "id": "13768",
+        "Player": "s1mon",
+        "Img": "//owcdn.net/img/677fe418eaaf8.png",
+        "Kills": 3588,
+        "Deaths": 1923,
+        "Assists": 262
+    },
+    {
+        "id": "1144",
+        "Player": "boo",
+        "Img": "//owcdn.net/img/665b77d7abe82.png",
+        "Kills": 7294,
+        "Deaths": 3895,
+        "Assists": 944
+    },
+    {
+        "id": "8549",
+        "Player": "kingg",
+        "Img": "//owcdn.net/img/69234b213a609.png",
+        "Kills": 5472,
+        "Deaths": 2841,
+        "Assists": 962
+    },
+    {
+        "id": "21328",
+        "Player": "wo0t",
+        "Img": "//owcdn.net/img/665b76ea6094c.png",
+        "Kills": 4655,
+        "Deaths": 2075,
+        "Assists": 915
+    },
+    {
+        "id": "29873",
+        "Player": "benjyfishy",
+        "Img": "//owcdn.net/img/665b77ca4bc4d.png",
+        "Kills": 4560,
+        "Deaths": 1273,
+        "Assists": 691
+    },
+    {
+        "id": "3017",
+        "Player": "nobody",
+        "Img": "//owcdn.net/img/677fe4210de6e.png",
+        "Kills": 7899,
+        "Deaths": 3367,
+        "Assists": 678
+    },
+    {
+        "id": "729",
+        "Player": "zellsis",
+        "Img": "//owcdn.net/img/671b20fca8019.png",
+        "Kills": 8243,
+        "Deaths": 4460,
+        "Assists": 1204
+    },
+    {
+        "id": "619",
+        "Player": "c0m",
+        "Img": "//owcdn.net/img/641693c3a0312.png",
+        "Kills": 7508,
+        "Deaths": 3422,
+        "Assists": 951
+    },
+    {
+        "id": "1818",
+        "Player": "tex",
+        "Img": "//owcdn.net/img/64bac4cfd9f9f.png",
+        "Kills": 7331,
+        "Deaths": 2198,
+        "Assists": 1540
+    },
+    {
+        "id": "1265",
+        "Player": "johnqt",
+        "Img": "//owcdn.net/img/65622aa13dc03.png",
+        "Kills": 6554,
+        "Deaths": 3036,
+        "Assists": 831
+    },
+    {
+        "id": "659",
+        "Player": "sacy",
+        "Img": "//owcdn.net/img/6416954a0788d.png",
+        "Kills": 4920,
+        "Deaths": 2921,
+        "Assists": 673
+    },
+    {
+        "id": "26171",
+        "Player": "demon1",
+        "Img": "/img/base/ph/sil.png",
+        "Kills": 4392,
+        "Deaths": 1004,
+        "Assists": 1005
+    },
+    {
+        "id": "1380",
+        "Player": "leo",
+        "Img": "//owcdn.net/img/65d5cb904fc7c.png",
+        "Kills": 4844,
+        "Deaths": 2819,
+        "Assists": 592
+    },
+    {
+        "id": "8447",
+        "Player": "less",
+        "Img": "//owcdn.net/img/677d651a8a520.png",
+        "Kills": 4606,
+        "Deaths": 1677,
+        "Assists": 671
+    },
+    {
+        "id": "6193",
+        "Player": "cauanzin",
+        "Img": "//owcdn.net/img/6889def2c0ea9.png",
+        "Kills": 3875,
+        "Deaths": 1861,
+        "Assists": 548
+    },
+    {
+        "id": "772",
+        "Player": "zest",
+        "Img": "//owcdn.net/img/63eba27ae8542.png",
+        "Kills": 4137,
+        "Deaths": 2037,
+        "Assists": 545
+    },
+    {
+        "id": "3993",
+        "Player": "jawgemo",
+        "Img": "//owcdn.net/img/64169400bfed7.png",
+        "Kills": 8635,
+        "Deaths": 3090,
+        "Assists": 1650
+    },
+    {
+        "id": "5022",
+        "Player": "derke",
+        "Img": "//owcdn.net/img/677d64fd893bb.png",
+        "Kills": 7430,
+        "Deaths": 1986,
+        "Assists": 2234
+    },
+    {
+        "id": "804",
+        "Player": "buzz",
+        "Img": "//owcdn.net/img/6757d39881445.png",
+        "Kills": 7694,
+        "Deaths": 2189,
+        "Assists": 1831
+    },
+    {
+        "id": "727",
+        "Player": "saadhak",
+        "Img": "//owcdn.net/img/66306e037e53b.png",
+        "Kills": 5777,
+        "Deaths": 3378,
+        "Assists": 897
+    },
+    {
+        "id": "9800",
+        "Player": "mindfreak",
+        "Img": "//owcdn.net/img/67c70182b6186.png",
+        "Kills": 6765,
+        "Deaths": 3276,
+        "Assists": 581
+    },
+    {
+        "id": "2408",
+        "Player": "tuyz",
+        "Img": "//owcdn.net/img/66306e474531d.png",
+        "Kills": 5219,
+        "Deaths": 2165,
+        "Assists": 864
+    },
+    {
+        "id": "604",
+        "Player": "boostio",
+        "Img": "//owcdn.net/img/641693760f427.png",
+        "Kills": 9065,
+        "Deaths": 2456,
+        "Assists": 1708
+    },
+    {
+        "id": "485",
+        "Player": "stax",
+        "Img": "//owcdn.net/img/6757d36ad3001.png",
+        "Kills": 6983,
+        "Deaths": 4139,
+        "Assists": 613
+    },
+    {
+        "id": "488",
+        "Player": "rb",
+        "Img": "//owcdn.net/img/678247d54091c.png",
+        "Kills": 6454,
+        "Deaths": 2207,
+        "Assists": 1183
+    },
+    {
+        "id": "11",
+        "Player": "zyppan",
+        "Img": "//owcdn.net/img/642eabbf895a5.png",
+        "Kills": 7264,
+        "Deaths": 3005,
+        "Assists": 1309
+    },
+    {
+        "id": "881",
+        "Player": "yay",
+        "Img": "//owcdn.net/img/67b5552720305.png",
+        "Kills": 5915,
+        "Deaths": 1509,
+        "Assists": 1559
+    },
+    {
+        "id": "683",
+        "Player": "pancada",
+        "Img": "//owcdn.net/img/6889ddd3735b1.png",
+        "Kills": 4656,
+        "Deaths": 2270,
+        "Assists": 582
+    },
+    {
+        "id": "98",
+        "Player": "ardiis",
+        "Img": "//owcdn.net/img/6416904081146.png",
+        "Kills": 5503,
+        "Deaths": 2466,
+        "Assists": 1115
+    },
+    {
+        "id": "4147",
+        "Player": "cryocells",
+        "Img": "//owcdn.net/img/64169262982eb.png",
+        "Kills": 8182,
+        "Deaths": 2732,
+        "Assists": 1744
+    },
+    {
+        "id": "2858",
+        "Player": "suygetsu",
+        "Img": "//owcdn.net/img/642eabfbd9478.png",
+        "Kills": 6573,
+        "Deaths": 2396,
+        "Assists": 856
+    },
+    {
+        "id": "261",
+        "Player": "victor",
+        "Img": "//owcdn.net/img/64169062bfcf2.png",
+        "Kills": 6607,
+        "Deaths": 2621,
+        "Assists": 1296
+    },
+    {
+        "id": "864",
+        "Player": "bcj",
+        "Img": "//owcdn.net/img/65a1ddb7603b0.png",
+        "Kills": 6273,
+        "Deaths": 3527,
+        "Assists": 821
+    },
+    {
+        "id": "263",
+        "Player": "marved",
+        "Img": "//owcdn.net/img/6207474eb81b1.png",
+        "Kills": 5780,
+        "Deaths": 2277,
+        "Assists": 817
+    },
+    {
+        "id": "824",
+        "Player": "ayrin",
+        "Img": "//owcdn.net/img/645be2156a591.png",
+        "Kills": 5389,
+        "Deaths": 2090,
+        "Assists": 628
+    },
+    {
+        "id": "882",
+        "Player": "dephh",
+        "Img": "//owcdn.net/img/641695371ca2b.png",
+        "Kills": 4632,
+        "Deaths": 1804,
+        "Assists": 716
+    },
+    {
+        "id": "384",
+        "Player": "shao",
+        "Img": "//owcdn.net/img/6792501581f4f.png",
+        "Kills": 6481,
+        "Deaths": 3417,
+        "Assists": 804
+    },
+    {
+        "id": "817",
+        "Player": "finesse",
+        "Img": "//owcdn.net/img/64168fe1322dd.png",
+        "Kills": 6912,
+        "Deaths": 2707,
+        "Assists": 680
+    },
+    {
+        "id": "109",
+        "Player": "ange1",
+        "Img": "//owcdn.net/img/6792500c3f0df.png",
+        "Kills": 7408,
+        "Deaths": 2717,
+        "Assists": 1239
+    }
+]

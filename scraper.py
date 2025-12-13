@@ -11,8 +11,6 @@ json_path = os.path.join(BASE_DIR, "data", "players.json")
 
 headers = {"User-Agent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"}
 
-full_stats = []
-
 def fetch(url):
     try:
         response = r.get(url, headers=headers, timeout=10)
@@ -48,7 +46,7 @@ def merge_players(players_list):
 
     return list(merged.values())
 
-def append_player_stats(id, name, img_url, kills, deaths, assists):
+def append_player_stats(full_stats, id, name, img_url, kills, deaths, assists):
     player_stats = {
         "id" : id,
         "Player" : name,
@@ -61,6 +59,8 @@ def append_player_stats(id, name, img_url, kills, deaths, assists):
 
 def scraper(mode, urls, output_file_name, skip_players_without_picture=True):
     # mode -> "tournament" or "career"
+
+    full_stats = []
 
     if len(urls) == 0:
         raise ValueError(f"The application needs at least one url.")
@@ -92,11 +92,11 @@ def scraper(mode, urls, output_file_name, skip_players_without_picture=True):
                 assists += int(s.select("td")[-2].text)
             name = player.split("/")[-1].replace("'", "")
             id = player.split("/")[-2]
-            append_player_stats(id, name, img_url, kills, deaths, assists)
+            append_player_stats(full_stats, id, name, img_url, kills, deaths, assists)
             time.sleep(0.7)
     elif mode == "tournament":
         stats_lists = []
-        for link in urls:
+        for i, link in enumerate(urls):
             request = fetch(link)
             site = BeautifulSoup(request.text, "html.parser")
             players = site.select("tbody tr")
@@ -117,6 +117,10 @@ def scraper(mode, urls, output_file_name, skip_players_without_picture=True):
                     "Deaths" : deaths,
                     "Assists" : assists
                 })
+            if i + 1 > 1:
+                print(f"{i + 1} urls completed.")
+            else:
+                print(f"{i + 1} url completed.")
             time.sleep(0.7)
         full_stats = merge_players(stats_lists)
             
