@@ -130,9 +130,13 @@ def scraper(mode, urls, output_file_name, skip_players_without_picture=True):
     with open(f"data/{output_file_name}.json", 'w', encoding="utf-8") as json_file:
         json.dump(full_stats, json_file, ensure_ascii=False, indent=4)
 
-list_url_exemples = [
-    "https://www.vlr.gg/event/stats/2283/valorant-champions-2025?exclude=33667.33671.33651.33652.33653.33654.33655.33656.33657.33658.33659.33660.33661.33662.33663.33664.33665.33666&min_rounds=0&agent=all"
-]
+def invalid_url(msg):
+    raise ValueError(
+        f"\n\033[31m✖ URL inválida\033[0m\n"
+        f"{msg}\n\n"
+        f"\033[36mExemplo válido:\033[0m\n"
+        f"https://www.vlr.gg/event/stats/1015/valorant-champions-2022\n"
+    )
 
 if __name__ == '__main__':
     print("=== VLR Stats Scraper ===")
@@ -145,6 +149,10 @@ if __name__ == '__main__':
     urls = []
     while True:
         u = input("> ").strip()
+        if "vlr.gg" not in u:
+            invalid_url("A URL precisa ser do site \033[1mvlr.gg\033[0m.")
+        elif "/stats/" not in u:
+            invalid_url("A URL precisa ser uma \033[1mpágina de estatísticas (/stats/)\033[0m.")
         if u == "":
             break
         urls.append(u)
