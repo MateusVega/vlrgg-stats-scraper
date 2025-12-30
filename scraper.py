@@ -160,7 +160,7 @@ if __name__ == '__main__':
         input("Skip players without picture? (y/n): ").strip().lower() == "y"
     )
 
-    print("\nRunning scraper...\n")
+    print("\nRunning scraper...\nFor best performance, keep this window active and in focus.\n")
 
     scraper(
         mode=mode,
