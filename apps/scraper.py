@@ -1,13 +1,7 @@
-import os
-from collections import defaultdict
 import json
 import time
 from bs4 import BeautifulSoup
 import requests as r
-
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-json_path = os.path.join(BASE_DIR, "data", "players.json")
 
 headers = {"User-Agent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"}
 
@@ -63,7 +57,8 @@ def scraper(mode, urls, output_file_name, skip_players_without_picture=True):
     full_stats = []
 
     if len(urls) == 0:
-        raise ValueError(f"The application needs at least one url.")
+        print(f"The application needs at least one url.")
+        exit(1)
     
     players_links = []
 
@@ -125,44 +120,49 @@ def scraper(mode, urls, output_file_name, skip_players_without_picture=True):
         full_stats = merge_players(stats_lists)
             
     else:
-        raise ValueError(f"Invalid Mode: {mode}. Use 'tournament' or 'career'.")
+        print(f"Invalid Mode: {mode}. Use 'tournament' or 'career'.")
+        exit(1)
     
     with open(f"data/{output_file_name}.json", 'w', encoding="utf-8") as json_file:
         json.dump(full_stats, json_file, ensure_ascii=False, indent=4)
 
 def invalid_url(msg):
-    raise ValueError(
-        f"\n\033[31m✖ URL inválida\033[0m\n"
+    print(
+        f"\n\033[31m✖ Invalid URL\033[0m\n"
         f"{msg}\n\n"
-        f"\033[36mExemplo válido:\033[0m\n"
+        f"\033[36mValid Exemple:\033[0m\n"
         f"https://www.vlr.gg/event/stats/1015/valorant-champions-2022\n"
     )
+    exit(1)
 
 if __name__ == '__main__':
     print("=== VLR Stats Scraper ===")
 
     mode = input("Mode ('tournament' or 'career'): ").strip().lower()
     if mode not in ["tournament", "career"]:
-        raise ValueError("Invalid mode. Use 'tournament' or 'career'.")
+        print("Invalid mode. Use 'tournament' or 'career'.")
+        exit(1)
 
     print("\nEnter URLs (one per line). When finished, press ENTER on an empty line:")
     urls = []
     while True:
         u = input("> ").strip()
-        if "vlr.gg" not in u:
-            invalid_url("A URL precisa ser do site \033[1mvlr.gg\033[0m.")
-        elif "/stats/" not in u:
-            invalid_url("A URL precisa ser uma \033[1mpágina de estatísticas (/stats/)\033[0m.")
         if u == "":
             break
+        if "vlr.gg" not in u:
+            invalid_url("A URL precisa ser do site \033[1mvlr.gg\033[0m.")
+        if "/stats/" not in u:
+            invalid_url("A URL precisa ser uma \033[1mpágina de estatísticas (/stats/)\033[0m.")
         urls.append(u)
 
     if len(urls) == 0:
-        raise ValueError("You must provide at least one URL.")
+        print("You must provide at least one URL.")
+        exit(1)
 
     output_file = input("\nOutput file name (without .json): ").strip()
     if output_file == "":
-        raise ValueError("Output file name cannot be empty.")
+        print("Output file name cannot be empty.")
+        exit(1)
 
     skip_players_without_picture = (
         input("Skip players without picture? (y/n): ").strip().lower() == "y"

@@ -6,6 +6,7 @@ Perfect for data analysis, small projects, or game ideas that need accurate Valo
 ---
 
 ## Features
+
 - Scrapes **kills, deaths, assists** from each player's career.
 - Supports two modes:
   - **career** → Collect stats from all players found in one or more event pages.
@@ -17,22 +18,27 @@ Perfect for data analysis, small projects, or game ideas that need accurate Valo
 ---
 
 ## Project Structure
+
 ```text
 vlr-stats-scraper/
 │
 ├── data/
 │   └── stats.json        # generated output (example)
 │
-├── scraper.py            # main script with CLI
+├── apps/
+│   └── scraper.py        # scraper script with CLI
+│   └── gen_graph_bars.py        # graph generator script with CLI
 ├── requirements.txt      # dependencies
 └── README.md
 ```
 
 ## Installation
+
 ```bash
 pip install -r requirements.txt
-python scraper.py
+python .\apps\scraper.py
 ```
+
 **Note: You need Python 3.12.0 installed**
 
 ## Usage
@@ -41,15 +47,17 @@ When running the scraper, you must provide the following arguments:
 
 ### **Mode** (`Career` / `Tournament`)
 
-
 ### **Competition URLs**
+
 Provide one or more links to the competitions you want to scrape.
 
 ### **Output File Name**
+
 The name of the JSON file to generate.  
 The file will be saved in the project directory.
 
 ### **Skip Players Without Profile Pictures** (`y` / `n`)
+
 If enabled, the scraper will ignore players who do not have a profile image.
 
 ---
@@ -59,22 +67,22 @@ If enabled, the scraper will ignore players who do not have a profile image.
 A structured **JSON file** containing all scraped player statistics will be generated in the project folder.
 
 ### Example Output
+
 ```json
 [
-    {
-        "id": 0,
-        "Player": "Kingg",
-        "Img": "https://.../player.png",
-        "Kills": 2834,
-        "Deaths": 2471,
-        "Assists": 912
-    }
+  {
+    "id": 0,
+    "Player": "Kingg",
+    "Img": "https://.../player.png",
+    "Kills": 2834,
+    "Deaths": 2471,
+    "Assists": 912
+  }
 ]
-
 ```
 
-
 ## Notes
+
 Made for personal and educational use.
 
 This project is not affiliated with VLR.gg.
