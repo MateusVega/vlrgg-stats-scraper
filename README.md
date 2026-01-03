@@ -152,6 +152,8 @@ champions_2023_kills
 
 ![Alt text](graphs/example1.png)
 
+**Stats from data/all-champions-playoffs.json**
+
 ---
 
 ## Project Structure
