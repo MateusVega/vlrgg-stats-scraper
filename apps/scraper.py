@@ -5,6 +5,8 @@ import requests as r
 
 headers = {"User-Agent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"}
 
+name_img_cache = {}
+
 def fetch(url):
     try:
         response = r.get(url, headers=headers, timeout=10)
@@ -14,9 +16,13 @@ def fetch(url):
         raise RuntimeError(f"Erro ao acessar {url}: {e}")
 
 def get_picture(url):
+    if url in name_img_cache:
+        return name_img_cache[url]
     request = fetch(f"https://www.vlr.gg{url}/?timespan=all")
     site = BeautifulSoup(request.text, "html.parser")
-    return site.select_one(".wf-avatar img")["src"]
+    image = site.select_one(".wf-avatar img")["src"]
+    name_img_cache[url] = image
+    return image
 
 def merge_players(players_list):
     merged = {}
@@ -50,6 +56,15 @@ def append_player_stats(full_stats, id, name, img_url, kills, deaths, assists):
         "Assists" : assists
     }
     full_stats.append(player_stats)
+
+def invalid_url(msg):
+    print(
+        f"\n\033[31m✖ Invalid URL\033[0m\n"
+        f"{msg}\n\n"
+        f"\033[36mValid Exemple:\033[0m\n"
+        f"https://www.vlr.gg/event/stats/1015/valorant-champions-2022\n"
+    )
+    exit(1)
 
 def scraper(mode, urls, output_file_name, skip_players_without_picture=True):
     # mode -> "tournament" or "career"
@@ -88,7 +103,7 @@ def scraper(mode, urls, output_file_name, skip_players_without_picture=True):
             name = player.split("/")[-1].replace("'", "")
             id = player.split("/")[-2]
             append_player_stats(full_stats, id, name, img_url, kills, deaths, assists)
-            time.sleep(0.7)
+            time.sleep(0.1)
     elif mode == "tournament":
         stats_lists = []
         for i, link in enumerate(urls):
@@ -99,11 +114,13 @@ def scraper(mode, urls, output_file_name, skip_players_without_picture=True):
                 img_url = get_picture(player.select_one(".mod-player a")["href"])
                 if img_url == "/img/base/ph/sil.png" and skip_players_without_picture:
                     continue
-                kills = int(player.select("td")[-5].text)
-                deaths = int(player.select("td")[-4].text)
-                assists = int(player.select("td")[-3].text)
-                name = player.select_one(".mod-player a")["href"].split("/")[-1]
-                id = player.select_one(".mod-player a")["href"].split("/")[-2]
+                tds = player.select("td")
+                kills = int(tds[-5].text)
+                deaths = int(tds[-4].text)
+                assists = int(tds[-3].text)
+                player_link = player.select_one(".mod-player a")["href"].split("/")
+                name = player_link[-1]
+                id = player_link[-2]
                 stats_lists.append({
                     "id" : id,
                     "Player" : name,
@@ -116,7 +133,7 @@ def scraper(mode, urls, output_file_name, skip_players_without_picture=True):
                 print(f"{i + 1} urls completed.")
             else:
                 print(f"{i + 1} url completed.")
-            time.sleep(0.7)
+            time.sleep(0.5)
         full_stats = merge_players(stats_lists)
             
     else:
@@ -125,15 +142,6 @@ def scraper(mode, urls, output_file_name, skip_players_without_picture=True):
     
     with open(f"data/{output_file_name}.json", 'w', encoding="utf-8") as json_file:
         json.dump(full_stats, json_file, ensure_ascii=False, indent=4)
-
-def invalid_url(msg):
-    print(
-        f"\n\033[31m✖ Invalid URL\033[0m\n"
-        f"{msg}\n\n"
-        f"\033[36mValid Exemple:\033[0m\n"
-        f"https://www.vlr.gg/event/stats/1015/valorant-champions-2022\n"
-    )
-    exit(1)
 
 if __name__ == '__main__':
     print("=== VLR Stats Scraper ===")
