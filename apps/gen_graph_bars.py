@@ -107,7 +107,7 @@ if __name__ == '__main__':
     }
 
     while True:
-        mode = input("Choose a stat to analyze (K / D / A / KDA): ").strip().upper()
+        mode = input("Choose the data to analyze (K / D / A / KDA): ").strip().upper()
         if mode in {"K", "D", "A", "KDA"}:
             break
         if mode in {"KILLS", "DEATHS", "ASSISTS"}:
